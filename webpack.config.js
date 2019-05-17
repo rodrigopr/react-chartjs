@@ -32,6 +32,12 @@ module.exports = {
                 commonjs: "react-dom",
                 amd: "react-dom"
             },
+            "create-react-class": {
+                root: "ReactCreateClass",
+                commonjs2: "create-react-class",
+                commonjs: "create-react-class",
+                amd: "create-react-class"
+            },
             "chart.js": {
                 root: "Chart",
                 commonjs2: "Chartjs",

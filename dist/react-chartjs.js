@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"), require("react-dom"), require("Chartjs"));
+		module.exports = factory(require("react"), require("react-dom"), require("create-react-class"), require("Chartjs"));
 	else if(typeof define === 'function' && define.amd)
-		define(["react", "react-dom", "Chartjs"], factory);
+		define(["react", "react-dom", "create-react-class", "Chartjs"], factory);
 	else if(typeof exports === 'object')
-		exports["react-chartjs"] = factory(require("react"), require("react-dom"), require("Chartjs"));
+		exports["react-chartjs"] = factory(require("react"), require("react-dom"), require("create-react-class"), require("Chartjs"));
 	else
-		root["react-chartjs"] = factory(root["React"], root["ReactDOM"], root["Chart"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_4__, __WEBPACK_EXTERNAL_MODULE_5__) {
+		root["react-chartjs"] = factory(root["React"], root["ReactDOM"], root["ReactCreateClass"], root["Chart"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_4__, __WEBPACK_EXTERNAL_MODULE_5__, __WEBPACK_EXTERNAL_MODULE_6__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -52,33 +52,33 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = {
 	  Bar: __webpack_require__(1),
-	  Bubble: __webpack_require__(6),
-	  Doughnut: __webpack_require__(7),
-	  Line: __webpack_require__(8),
-	  Pie: __webpack_require__(9),
-	  PolarArea: __webpack_require__(10),
-	  Radar: __webpack_require__(11),
-	  Scatter: __webpack_require__(12),
+	  Bubble: __webpack_require__(7),
+	  Doughnut: __webpack_require__(8),
+	  Line: __webpack_require__(9),
+	  Pie: __webpack_require__(10),
+	  PolarArea: __webpack_require__(11),
+	  Radar: __webpack_require__(12),
+	  Scatter: __webpack_require__(13),
 	  createClass: __webpack_require__(2).createClass
 	};
 
 
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var vars = __webpack_require__(2);
 
 	module.exports = vars.createClass('Bar', ['getBarsAtEvent']);
 
 
-/***/ },
+/***/ }),
 /* 2 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	// Designed to be used with the current v2.0-dev version of Chart.js
 	// It's not on NPM, but if you'd like to use it you can, install it
@@ -89,6 +89,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var React = __webpack_require__(3);
 	var ReactDOM = __webpack_require__(4);
+	var createClass = __webpack_require__(5); 
 
 	module.exports = {
 	  createClass: function(chartType, methodNames, dataKey) {
@@ -157,7 +158,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  };
 
 	    classData.initializeChart = function(nextProps) {
-	      var Chart = __webpack_require__(5);
+	      var Chart = __webpack_require__(6);
 	      var el = ReactDOM.findDOMNode(this);
 	      var ctx = el.getContext("2d");
 
@@ -198,92 +199,99 @@ return /******/ (function(modules) { // webpackBootstrap
 	      extra(methodNames[i]);
 	    }
 
-	    return React.createClass(classData);
+	    return createClass(classData);
 	  }
 	};
 
-/***/ },
+
+/***/ }),
 /* 3 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
 
-/***/ },
+/***/ }),
 /* 4 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = __WEBPACK_EXTERNAL_MODULE_4__;
 
-/***/ },
+/***/ }),
 /* 5 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = __WEBPACK_EXTERNAL_MODULE_5__;
 
-/***/ },
+/***/ }),
 /* 6 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_6__;
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	var vars = __webpack_require__(2);
 
 	module.exports = vars.createClass('Bubble', ['getPointsAtEvent']);
 
 
-/***/ },
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	var vars = __webpack_require__(2);
 
 	module.exports = vars.createClass('Doughnut', ['getSegmentsAtEvent']);
 
 
-/***/ },
-/* 8 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	var vars = __webpack_require__(2);
 
 	module.exports = vars.createClass('Line', ['getPointsAtEvent']);
 
 
-/***/ },
-/* 9 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	var vars = __webpack_require__(2);
 
 	module.exports = vars.createClass('Pie', ['getSegmentsAtEvent']);
 
 
-/***/ },
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	var vars = __webpack_require__(2);
 
 	module.exports = vars.createClass('PolarArea', ['getSegmentsAtEvent']);
 
 
-/***/ },
-/* 11 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	var vars = __webpack_require__(2);
 
 	module.exports = vars.createClass('Radar', ['getPointsAtEvent']);
 
 
-/***/ },
-/* 12 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	var vars = __webpack_require__(2);
 
 	module.exports = vars.createClass('Scatter', ['getPointsAtEvent']);
 
 
-/***/ }
+/***/ })
 /******/ ])
 });
 ;
